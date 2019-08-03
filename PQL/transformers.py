@@ -1,5 +1,7 @@
 # Initialize Conversion methods
 
+import pandas as pd
+
 
 class conversionMethods:
     def __init__(self):
@@ -7,7 +9,7 @@ class conversionMethods:
 
     def xlsx_to_db_table(
         self, excel_file_location: str,
-        tab_num: int, custom_table_name: str=None,
+        tab_num: int=0, custom_table_name: str=None,
         skip_rows: int=0, if_exists: str="fail"
     ) -> pd.DataFrame:
         """
@@ -17,7 +19,7 @@ class conversionMethods:
             ==================
                 excel_file_location: the relative path of the excel file
 
-                tab_num: The excel sheet to turn into a table
+                tab_num: The excel sheet to turn into a table (start index: 0)
 
                 custom_table_name: the name of the table in the db file
                     - The tab name is used as the default table name
@@ -34,7 +36,7 @@ class conversionMethods:
                 xl.sheet_names[kwargs['tab_num']]
             )
             page_df = xl.parse(
-                xl.sheet_names[kwargs['tab_num']], skiprows=kwargs['skip_rows']
+                sheet_name=kwargs['tab_num'], skiprows=kwargs['skip_rows']
             )
             custom_table_name = custom_table_name.strip().replace(
                 ' ', '_').replace('-', '').replace('__', '_').lower()

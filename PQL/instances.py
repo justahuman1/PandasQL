@@ -5,6 +5,17 @@ class metaInfo:
     def __init__(self):
         pass
 
+    def fix_cpath(self, custom_path: str, db_name: str) -> None:
+        """
+            custom_path: os.path.join result of the custom location
+            db_name: The name of the database we will be utilizing
+                - Include '.db' extension
+                - Creates db if not in current directory or custom_path
+        """
+        self.cpath = custom_path
+        print(f"Reinitialized at {self.cpath}")
+        self.db_loc = self._create_connect_database(db_name)
+
     def meta_table_metadata(self, table_name: str) -> list:
         """
             Returns a list of information about the table_name

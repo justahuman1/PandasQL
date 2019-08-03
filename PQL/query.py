@@ -1,5 +1,5 @@
 # Initialize Query Class
-
+import pandas as pd
 
 class queryRunner:
     def __init__(self):

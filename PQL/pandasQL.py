@@ -1,7 +1,6 @@
-from PQL import conversionMethods, queryRunner
+from PQL import conversionMethods, queryRunner, metaInfo
 import os
 import types
-import pandas as pd
 import sqlite3 as sq
 from sqlite3 import Error
 from sqlalchemy import create_engine
@@ -33,17 +32,6 @@ class PandasQL(conversionMethods, metaInfo, queryRunner):
         conversionMethods.__init__(self)
         metaInfo.__init__(self)
         queryRunner.__init__(self)
-
-    def fix_cpath(self, custom_path: str, db_name: str) -> None:
-        """
-            custom_path: os.path.join result of the custom location
-            db_name: The name of the database we will be utilizing
-                - Include '.db' extension
-                - Creates db if not in current directory or custom_path
-        """
-        self.cpath = custom_path
-        print(f"Reinitialized at {self.cpath}")
-        self.db_loc = self._create_connect_database(db_name)
 
     def _connectionController(
         self, command: types.BuiltinFunctionType,

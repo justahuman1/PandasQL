@@ -12,7 +12,7 @@ class FileDbTest:
     def xl_to_db(self):
         self.file_db.xlsx_to_db_table(
             '../data/xl_sample.xlsx',
-            tab_num=1,
+            tab_num=0,
             custom_table_name='test_table_xl',
             if_exists='replace'
         )
@@ -38,7 +38,7 @@ class MemoryDbTest:
     def xl_to_db(self):
         self.mem_db.xlsx_to_db_table(
             '../data/xl_sample.xlsx',
-            tab_num=1,
+            tab_num=0,
             custom_table_name='test_table_xl',
             if_exists='replace'
         )
