@@ -6,7 +6,7 @@ SparkSQL allows you to integrate direct sql into your dataframes without any add
 
 I made this as I was dealing with TB files at my place of work; using this helped me create high-level generator functions to easily handle the data via sqlite (afterall, sqlite storage limit is 140 terrabytes). I was easily able to store around 11 TB's of data into sqlite and chunk it for pandas analysis.
 
-This is not a replacement for SparkSQL and provides no framework for distributed computing. That can be additionaly utilize via dask (pip install dask). It is simply an abstraction to provide the same workflow as the Spark environment.
+This is not a replacement for SparkSQL and provides no framework for distributed computing. That can be additionaly utilized via dask (pip install dask). It is simply an abstraction to provide the same workflow as the Spark environment.
 
 
 
