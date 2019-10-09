@@ -2,7 +2,7 @@
 
 Seamless integration between sqlite3 and pandas; create and query databases from excel, csv files in less than 3 lines of code!
 
-SparkSQL allows you to integrate direct sql into your dataframes without any additional low-level overhead (such as closing connections and auto indexing). I wanted it to be the same way for pandas, hence PQL. All the sqlalchemy methods and connection managers are abstracted and we can simple query the database, in-memory, or to file.
+SparkSQL allows you to integrate direct sql into your dataframes without any additional low-level overhead (such as closing connections and auto indexing). I wanted it to be the same way for pandas, hence PQL. All the sqlalchemy methods and connection managers are abstracted and we can simply query the database, in-memory, or to file.
 
 I made this as I was dealing with TB files at my place of work; using this helped me create high-level generator functions to easily handle the data via sqlite (afterall, sqlite storage limit is 140 terrabytes). I was easily able to store around 11 TB's of data into sqlite and chunk it for pandas analysis.
 
