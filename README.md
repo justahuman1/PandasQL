@@ -1,6 +1,6 @@
 # Pandas Query Language - PQL
 
-Seamless integration between sqlite3 and pandas; create and query databases from excel, csv files in less than 3 lines of code!
+Seamless integration between sqlite3 and pandas; create and query databases from excel and csv files in less than 3 lines of code!
 
 SparkSQL allows you to integrate direct sql into your dataframes without any additional low-level overhead (such as closing connections and auto indexing). I wanted it to be the same way for pandas, hence PQL. All the sqlalchemy methods and connection managers are abstracted and we can simply query the database, in-memory, or to file.
 
